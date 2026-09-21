@@ -12,10 +12,6 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -137,18 +133,6 @@ h1 {
     display: block;
 }
 
-/* Dark overlay used to hide details */
-
-.image-frame::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(circle, rgba(255,255,255,.08) 2px, transparent 2px);
-    background-size: 15px 15px;
-    pointer-events: none;
-}
-
 /* =========================================
    IMAGE STATES
 ========================================= */
@@ -163,7 +147,15 @@ h1 {
     color: #fff;
     font-size: 70px;
     background:
-        linear-gradient(135deg, #111 25%, #222 25%, #222 50%, #111 50%, #111 75%, #222 75%);
+        linear-gradient(
+            135deg,
+            #111 25%,
+            #222 25%,
+            #222 50%,
+            #111 50%,
+            #111 75%,
+            #222 75%
+        );
     background-size: 40px 40px;
 }
 
@@ -488,11 +480,6 @@ button:active {
         </div>
 
     </div>
-
-    <!--
-    The image will appear here automatically
-    when you add the corresponding file.
-    -->
 
     <img
         id="clueImage"
@@ -852,10 +839,12 @@ nextButton.addEventListener(
             progressBar.style.width =
                 "100%";
 
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+            /*
+             * NO AUTOMATIC SCROLL
+             *
+             * The page stays exactly
+             * where the user is.
+             */
 
         }
 
@@ -879,10 +868,12 @@ document
 
                 reveal.classList.remove("hidden");
 
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
+                /*
+                 * NO AUTOMATIC SCROLL
+                 *
+                 * The page stays exactly
+                 * where the user is.
+                 */
 
             }
         );
@@ -909,10 +900,12 @@ function restartGame() {
 
     showClue();
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+    /*
+     * NO AUTOMATIC SCROLL
+     *
+     * The page stays exactly
+     * where the user is.
+     */
 
 }
 
